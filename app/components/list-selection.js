@@ -29,7 +29,7 @@ export default Ember.Component.extend({
       this.sendAction( "arrow-key-action", event, "up", "list" );
     }
 
-    else if( event.metaKey && event.keyCode == "65" || event.ctrlKey && event.keyCode == "65" ){
+    else if( event.metaKey && event.keyCode === "65" || event.ctrlKey && event.keyCode === "65" ){
       this.sendAction( "on-select-all", event );
     }
   }

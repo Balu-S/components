@@ -6,13 +6,13 @@ export default Ember.Mixin.create({
         arrowActions( event, pressedKey, viewType ){
             var _self = this,
                 _currentModelIndex = _self.get('currentModelIndex'), // No I18N
-                _nextModelIndex = _currentModelIndex + 1,
+                // _nextModelIndex = _currentModelIndex + 1,
                 _modelObject = _self.get("model");
 
-            if( (pressedKey == "down" && viewType === "list") || (pressedKey == "right" && viewType === "grid") ){
+            if( (pressedKey === "down" && viewType === "list") || (pressedKey === "right" && viewType === "grid") ){
                 _self.send( "downArrowAction", event, _currentModelIndex, _modelObject );
             }
-            else if( (pressedKey == "up" && viewType === "list") || (pressedKey == "left" && viewType === "grid") ){
+            else if( (pressedKey === "up" && viewType === "list") || (pressedKey === "left" && viewType === "grid") ){
                 _self.send( "upArrowAction", event, _currentModelIndex, _modelObject );
             }
             /*else if ( pressedKey == "down" && viewType === "grid" ){
@@ -61,9 +61,9 @@ export default Ember.Mixin.create({
     // DESELECTING SELECTED MODEL ACTION HANDLER
         deselectModels( modelObject ){
             var _self = this,
-                modelObject = modelObject ? modelObject : _self.get( "model" );
+                _modelObject = modelObject ? modelObject : _self.get( "model" );
 
-            modelObject.setEach( "is_active", false );
+            _modelObject.setEach( "is_active", false );
         },
 
     // SELECTING ALL MODEL ACTION HANDLER
