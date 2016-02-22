@@ -6,6 +6,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('components', function() {});
+  this.route('selection');
+  this.route('foldertree');
 });
 
 export default Router;

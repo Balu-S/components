@@ -1,0 +1,5 @@
+<ul>
+    {{#each model as | item |}}
+        {{folder-tree folderItem=item tagName="li" content=item}}
+    {{/each}}
+</ul>

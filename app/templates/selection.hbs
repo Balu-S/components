@@ -1,0 +1,12 @@
+<h4>Selection</h4>
+
+<div class='container'>
+    {{#each model as | list |}}
+      {{list-selection
+            model=list
+            viewType=viewType
+            arrow-key-action=(action 'arrowActions')
+            on-select=(action 'onItemSelect')
+            on-select-all=(action 'onAllItemSelect')}}
+    {{/each}}
+</div>
