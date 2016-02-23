@@ -15,7 +15,7 @@ export default Ember.Route.extend({
                         'children': [{'action':'readAction', 'subname': 'Read Only' , 'children': []},
                                      {'action':'readWriteAction', 'subname': 'Read Write' , 'children': []},
                                      {'action':'CoOwnerAction', 'subname': 'Co Owner' , 'children': []},
-                                   ]}; // No I18N
+                                   ]}];
 
     return name;
   }
