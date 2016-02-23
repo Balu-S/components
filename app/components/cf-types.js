@@ -13,11 +13,15 @@ export default Ember.Component.extend({
                         {id: 7, value: "Yes/No" }, // No I18N
                         {id: 8, value: "Choice" }], // No I18N
 
-        click: function(){
-                var self = this,
-                class_name = self.get('dynamic_class') === 'hidediv' ? 'showdiv' : 'hidediv';
-                self.set('dynamic_class', class_name);
-
+        actions:{
+                changeClass: function( obj ){
+                        var self = this,
+                        class_name = self.get('dynamic_class') === 'hidediv' ? 'showdiv' : 'hidediv';
+                        self.set('dynamic_class', class_name);
+                        if (obj){
+                                self.set('selected_type', obj.value);
+                        }
+                }
         }
 
 });
