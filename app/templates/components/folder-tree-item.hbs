@@ -1,0 +1,5 @@
+<span class="icon-space {{if folderItem.subfolder 'subfolder-icon'}} {{if folderItem.is_opened 'open-tree'}}" {{action "openSubFolder"}}></span>
+<span class="res_name_space"> {{folderItem.res_name}} </span>
+{{#if folderItem.children.length}}
+    {{folder-tree folderTreeList=folderItem.children}}
+{{/if}}

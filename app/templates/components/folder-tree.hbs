@@ -1,5 +1,3 @@
-<span class="icon_space"></span>
-<span class="res_name_space"> {{folderItem.res_name}} </span>
-{{#if folderItem.children.length}}
-    {{render "foldertree" folderItem.children}}
-{{/if}}
+{{#each folderTreeList as | item |}}
+    {{folder-tree-item folderItem=item tagName="li"}}
+{{/each}}
