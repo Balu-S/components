@@ -1,15 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    click( event ){
-        event.stopPropagation();
-
-        this.get('folderItem');
-    },
     doubleClick( event ){
         event.stopPropagation();
-        event.preventDefault();
-        var new_folder_name = prompt("Enter your new folder Name", "Untitled");
+        var new_folder_name = prompt("Enter your new folder Name", "Untitled Folder");
         if (new_folder_name != null) {
             this.get( "folderItem" ).set("subfolder", true);
             this.get( "folderItem" ).set("is_opened", true);

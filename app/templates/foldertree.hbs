@@ -1,5 +1,12 @@
-{{folder-tree folderTreeList=model}}
-<br>
-<br>
-<br>
-<b>Double click to create a new folder!!!</b>
+<div class="folderTreeContainer">
+    <div>
+        <b> Default Class </b>
+        {{folder-tree folderTreeList=model nameOfComponent='folder-tree-item'}}
+
+        Double click to <b>create a new folder</b>!!!
+    </div>
+    <br>
+    <br>
+    <br>
+    {{outlet}}
+</div>
