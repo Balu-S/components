@@ -11,8 +11,11 @@ export default Ember.Route.extend({
                         {'action': 'RenameAction', 'name':'Rename'},
                         {'action': 'DuplicateAction', 'name':'Duplicate'},
                         {'action': 'DownloadAction', 'name':'Download'},
-                        {'action': 'More', 'name': 'More', 'more' : 'moreItems', 'children': [{'action':'readAction', 'subname': 'Read Only' , 'children': []},[{'action':'readWriteAction', 'subname': 'Read Write' , 'children': []},
-                        [{'action':'coOwnerAction', 'subname': 'Co Owner' , 'children': []}}, ]; // No I18N
+                        {'action': 'MoreAction', 'name': 'More', 'more' : 'moreItems',
+                        'children': [{'action':'readAction', 'subname': 'Read Only' , 'children': []},
+                                     {'action':'readWriteAction', 'subname': 'Read Write' , 'children': []},
+                                     {'action':'CoOwnerAction', 'subname': 'Co Owner' , 'children': []},
+                                   ]}; // No I18N
 
     return name;
   }
