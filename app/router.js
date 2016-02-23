@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('reopen');
   });
   this.route('rename');
+  this.route('customfields');
 });
 
 export default Router;
