@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('components', function() {});
   this.route('selection');
   this.route('foldertree');
+  this.route('rename');
 });
 
 export default Router;
