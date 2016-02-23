@@ -1,0 +1,16 @@
+{{#if menuItem.more}}
+  <div class="ui dropdown item">
+   {{menuItem.name}}
+    <i class="dropdown icon"></i>
+   {{#if menuItem.children.length}}
+
+   <div class="menu">
+     <a class="item"><i class="edit icon"></i> {{menuItem.subname}}</a>
+   </div>
+   {{/if}}
+ </div>
+{{else}}
+    <a class="item">
+      {{menuItem.name}}
+    </a>
+{{/if}}
