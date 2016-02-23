@@ -4,6 +4,6 @@ import FolderTreeItemComponent from './folder-tree-item';
 export default FolderTreeItemComponent.extend({
     doubleClick( event ){
         event.stopPropagation();
-        this.send( "openSubFolder" )
+        this.send( "openSubFolder" );
     }
 });
