@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('foldertree', function() {
     this.route('reopen');
   });
+  this.route('menu');
   this.route('rename');
   this.route('customfields');
 });
