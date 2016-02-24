@@ -8,5 +8,5 @@
     <span class="res_name_space"> {{folderItem.res_name}} </span>
 </label>
 {{#if folderItem.children.length}}
-    {{folder-tree nameOfComponent='folder-tree-item' folderTreeList=folderItem.children}}
+    {{folder-tree nameOfComponent=nameOfComponent folderTreeList=folderItem.children}}
 {{/if}}

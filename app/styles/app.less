@@ -1,45 +1,16 @@
-@selectionColor: #2AD2BC;
-@containerWidth: 250px;
+@containerWidth: 580px;
+@greyColor: #cccccc;
+@lightGreyColor: rgba(204, 204, 204, 0.39);
+@headerBackgroundColor: #FAFAFA;
+@darkGreyColor: #565656;
+@whiteColor: #fff;
+@blueColor: #4285f4;
+@fontSize: 13px;
 @imageURL: "./images/zd-sprite.png";
 
-ul{
-    list-style: none;
-    padding-left: 15px;
-}
-ul > li {
-    margin: 5px 0px;
-}
-::selection {
-    background: none;
-}
-
-.list-item:focus,
-.list-header:focus {
-    outline: none;
-}
-.list-item {
-    padding: 4px;
-    border-radius: 7px;
-    margin-left: 20px;
-}
-.container{
-  width: @containerWidth;
-  border: 1px;
-  border-radius: 20px;
-  box-shadow: -1px 0px 14px 5px #eee;
-  padding: 12px;
-}
-
-.is-active{
-  background-color: @selectionColor;
-  color: #fff;
-}
-
-.grid-item{
-  width: 73px;
-  margin: 0px 4px;
-  display: inline-block;
-}
+@import "theme.less";
+@import "selectionview.less";
+@import "folderTreeView.less";
 
 .icon-space{
     margin: 5px 5px 0 10px;
@@ -57,7 +28,7 @@ ul > li {
     width: 0;
     height: 0;
     border-top: 4px solid transparent;
-    border-left: 7px solid #b1b1b1;
+    border-left: 7px solid @darkGreyColor;
     border-bottom: 4px solid transparent;
     float: left;
     margin: 5px 5px 0 3px;
@@ -81,10 +52,6 @@ ul > li {
     display: block;
 }
 
-.folderTreeContainer{
-    margin-left: 100px;
-    margin-top: 40px;
-}
 .ui.menu a.item:hover, .ui.menu.active.item:hover, .ui.vertical.menu.active.item:hover {
     cursor: pointer;
     background: rgba(0,0,0,.03);
