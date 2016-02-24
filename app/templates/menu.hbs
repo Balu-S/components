@@ -1,1 +1,5 @@
-{{outlet}}
+<div class="ui vertical menu">
+    {{#each model as | item |}}
+        {{menu-component menuItem=item content=item}}
+    {{/each}}
+</div>

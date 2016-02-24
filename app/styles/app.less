@@ -1,71 +1,15 @@
-@selectionColor: #2AD2BC;
-@containerWidth: 250px;
+@containerWidth: 580px;
+@greyColor: #cccccc;
+@lightGreyColor: rgba(204, 204, 204, 0.39);
+@headerBackgroundColor: #FAFAFA;
+@darkGreyColor: #565656;
+@whiteColor: #fff;
+@blueColor: #4285f4;
+@fontSize: 13px;
+@imageURL: "./images/zd-sprite.png";
 
-ul{
-    list-style: none;
-    padding-left: 15px;
-}
-
-::selection {
-    background: none;
-}
-
-.list-item:focus,
-.list-header:focus {
-    outline: none;
-}
-.list-item {
-    padding: 4px;
-    border-radius: 7px;
-    margin-left: 20px;
-}
-.container{
-  width: @containerWidth;
-  border: 1px;
-  border-radius: 20px;
-  box-shadow: -1px 0px 14px 5px #eee;
-  padding: 12px;
-}
-
-.is-active{
-  background-color: @selectionColor;
-  color: #fff;
-}
-
-.grid-item{
-  width: 73px;
-  margin: 0px 4px;
-  display: inline-block;
-}
-
-.icon-space{
-    margin: 5px 5px 0 10px;
-}
-.subfolder-icon{
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 4px solid transparent;
-    border-left: 7px solid #b1b1b1;
-    border-bottom: 4px solid transparent;
-    float: left;
-    margin: 5px 5px 0 3px;
-}
-.folder-item{
-    display: block;
-    float: left;
-    width: 100%;
-    box-sizing: border-box;
-}
-.subfolder-icon+.res_name_space+ul{
-    display: none;
-}
-.open-tree{
-    transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-}
-.subfolder-icon.open-tree+.res_name_space+ul{
-    display: block;
-}
+@import "theme.less";
+@import "selectionview.less";
+@import "folderTreeView.less";
+@import "menu.less";
+@import "customFields.less";

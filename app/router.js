@@ -6,10 +6,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('components', function() {});
   this.route('selection');
-  this.route('foldertree');
+  this.route('foldertree', function() {
+    this.route('reopen');
+  });
+  this.route('menu');
   this.route('rename');
+  this.route('customfields');
 });
 
 export default Router;
