@@ -1,5 +1,5 @@
 {{#if folderItem.is_myfolder}}
-    <span class="icon-space my-folder-icon"></span>
+    <span class="my-folder-icon"></span>
 {{else}}
     <span class="icon-space {{if folderItem.subfolder 'subfolder-icon'}} {{if folderItem.is_opened 'open-tree'}}" {{action "openSubFolder"}}></span>
 {{/if}}
