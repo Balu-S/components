@@ -20,6 +20,10 @@ export default Ember.Component.extend({
                         self.set('dynamic_class', class_name);
                         if (obj){
                                 self.set('selected_type', obj.value);
+
+                                if ( obj.value === "Yes/No" ){
+
+                                }
                         }
                 }
         }
