@@ -1,5 +1,7 @@
 {{#if renameList.is_rename}}
-  {{input type=text value=renameList.res_name}}
+  <div class="ui input">
+    {{input id="renameInp" type=text value=renameList.res_name}}
+  </div>  
 {{else}}
-  <span {{action "showName"}}>{{renameList.res_name}}</span> 
+  <span {{action "showName"}}>{{renameList.res_name}}</span>
 {{/if}}
