@@ -1,36 +1,54 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNameBindings: ["isActive", "listItem", "listHeader"], // No I18N
-  attributeBindings: ["tabIndex"],
-  tabIndex: -1,
-  isActive: Ember.computed.alias('model.is_active'), // No I18N
-  listItem: function(){
-    return this.get('model.split') ? false : true; // No I18N
-  }.property(),
-  listHeader: Ember.computed.alias('model.split'), // No I18N
+    classNameBindings: ["isActive", "listItem", "listHeader"], // No I18N
+    attributeBindings: ["tabIndex", "draggable"],
+    tabIndex: -1,
+    draggable: true,
+    isDragging: false,
+    isActive: Ember.computed.alias('model.is_active'), // No I18N
+    listItem: function(){
+        return this.get('model.split') ? false : true; // No I18N
+    }.property(),
+    listHeader: Ember.computed.alias('model.split'), // No I18N
 
-  // CLICK EVENT ACTION HANDLER
-  click( event ){
-    var _selectedModel = this.get("model");
-    if( !_selectedModel.get("split") ){
-      this.sendAction( "on-select", event, _selectedModel );
-    }
-  },
+    // CLICK EVENT ACTION HANDLER
+    mouseDown( event ){
 
-  // KEYDOWN EVENT ACTION HANDLER
-  keyDown( event ){
-    // DOWN ARROW
-    if( event.keyCode === 40 ){
-      this.sendAction( "arrow-key-action", event, "down", "list" );
-    }
-    // UP ARROW
-    else if( event.keyCode === 38 ){
-      this.sendAction( "arrow-key-action", event, "up", "list" );
-    }
+        var _selectedModel = this.get("model");
+        if( !_selectedModel.get("split") ){
+            this.sendAction( "on-select", event, _selectedModel );
+        }
+    },
 
-    else if( event.metaKey && event.keyCode === 65 || event.ctrlKey && event.keyCode === 65 ){
-      this.sendAction( "on-select-all", event );
-    }
-  }
+    // KEYDOWN EVENT ACTION HANDLER
+    keyDown( event ){
+        // DOWN ARROW
+        if( event.keyCode === 40 ){
+            this.sendAction( "arrow-key-action", event, "down", "list" );
+        }
+        // UP ARROW
+        else if( event.keyCode === 38 ){
+            this.sendAction( "arrow-key-action", event, "up", "list" );
+        }
+        else if( event.metaKey && event.keyCode === 65 || event.ctrlKey && event.keyCode === 65 ){
+            this.sendAction( "on-select-all", event );
+        }
+    },
+    dragStart(){
+        var clonedElement = this.$().clone(true);
+
+        this.clonedElement = clonedElement;
+        console.log("Start");
+
+        clonedElement.insertBefore( this.$() );
+    },
+
+    drag( event ){
+        // console.log( this.get("model"),  )/
+    },
+    dragEnd(){
+        console.log("End");
+        this.clonedElement.remove();
+    },
 });
