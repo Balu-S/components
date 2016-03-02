@@ -1,5 +1,6 @@
 import Ember from 'ember';
 
+
 export default Ember.Component.extend({
 
 
@@ -13,7 +14,11 @@ export default Ember.Component.extend({
 
 
     if(new_name.length < 1){
-      alert('Name is Empty, Please Type Something');
+      // alert('Name is Empty, Please Type Something');
+
+
+
+      console.log(t('Name is Empty, Please Type Something'));
       // this.$('input#renameInp').focus();
     }
 
@@ -25,8 +30,11 @@ export default Ember.Component.extend({
 
       if ( event.keyCode === 27 ) {// NOTE: Esc key action
 
+        var temp = this.get('renameList.res_name');
+        temp.rollbackAttributes;
         this.get('renameList').set('is_rename', false);
-
+        console.log('Foucus Out');
+        console.log(this.get('renameList'));
       }
 
 
